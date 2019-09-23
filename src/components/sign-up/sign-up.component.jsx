@@ -1,13 +1,10 @@
 import React from "react";
-
-import formInput from "../form-input/form-input.component";
-import customButton from "../custom-button/custom-button.component";
+import FormInput from "../form-input/form-input.component";
+import CustomButton from "../custom-button/custom-button.component";
 
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 
 import "./sign-up.style.scss";
-import FormInput from "../form-input/form-input.component";
-import CustomButton from "../custom-button/custom-button.component";
 
 class SignUp extends React.Component {
   constructor() {
@@ -23,7 +20,7 @@ class SignUp extends React.Component {
   handleSubmit = async event => {
     event.preventDefault();
     const { displayName, email, password, confirmPassword } = this.state;
-    if (password != confirmPassword) {
+    if (password !== confirmPassword) {
       alert("password don't  match");
       return;
     }
